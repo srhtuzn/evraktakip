@@ -1,0 +1,11 @@
+{
+  "mysql": {
+    "host": "78.186.33.234",
+    "port": 3307,
+    "user": "root",
+    "password": "Sero.1510",
+    "database": "evrak_takip"
+  },
+  "files_dir": "Evraklar",
+  "archive_root": "C:/evraklar"
+}
