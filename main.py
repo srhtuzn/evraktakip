@@ -184,9 +184,6 @@ class MainWindow(QMainWindow):
         self.load_lookups()
         self.refresh_lookup_widgets()
 
-    def ensure_dirs(self):
-        os.makedirs(self.cfg['files_dir'], exist_ok=True)
-
     def db_connect(self):
         return mysql.connector.connect(**self.conn_params)
 
@@ -1201,7 +1198,7 @@ class MainWindow(QMainWindow):
             tn = self.generate_tracking_no()
             ext = os.path.splitext(src)[1]
             filename = f"{an}{ext}"
-            dst = os.path.join(folder, filename)
+            dst = os.path.join(self.target_folder_le.text(), f"{an}{ext}")
             shutil.copy2(src, dst)
 
             sql = """
